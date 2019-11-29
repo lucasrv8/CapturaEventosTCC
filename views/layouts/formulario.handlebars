@@ -1,0 +1,210 @@
+<style>
+    @font-face{
+        font-family: Poppins;
+        src: url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap');
+
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #111;
+    }
+
+    .container{
+        position: relative;
+        width: 700px;
+        padding: 100px;
+        background: #151515;
+    }
+
+    .container h2{
+        color: #999;
+        margin-bottom: 45px;
+    }
+
+    .input-field{
+        position: relative;
+        height: 40px;
+        width: 100%
+    }
+
+    .input-field input[type="text"]{
+        position: relative;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        font-size:16px;
+        color: #fff;
+        width: 100%;
+    }
+
+    .input-field .input2[type="text"]{
+        top: 60px;
+    }
+
+    .input-field .label1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #555;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+    }
+
+    .input-field .label2{
+        position: absolute;
+        top: 85px;
+        left: 0;
+        color: #555;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+    }
+
+    .input-field input[type="text"]:focus + label,
+    .input-field input[type="text"]:valid + label{
+        transform: translateY(-35px);
+        font-size: 14px;
+        color:#fff;
+        background: #56d22b;
+        padding: 2px 6px;
+    }
+
+    .input-field .span1{
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        display: block;
+        background: #555;
+        width: 100%;
+        height: 2px;
+    }
+    
+    .input-field .span2{
+        top: 115px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: block;
+        background: #555;
+        width: 100%;
+        height: 2px;
+    }
+    
+    .input-field .span1:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #56d22b;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .input-field .span2:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #56d22b;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .input-field input[name="titulo"]:focus ~ .span1:before,
+    .input-field input[name="titulo"]:valid ~ .span1:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .input-field input[name="conteudo"]:focus ~ .span2:before,
+    .input-field input[name="conteudo"]:valid ~ .span2:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .btn{
+        margin-left: 130px;
+        margin-top: 100px;
+        border: none;
+        box-shadow: none;
+        padding: 10px 25px;
+        background: #56d22b;
+        color:#333;
+        font-size: 16px;
+        cursor: pointer;
+
+        border-style: solid;
+        border-width: 2px;
+        border-color: #56d22b;
+    }
+
+    .btn:hover{
+        background: #56d22b;
+        color: black;
+    }
+
+    .btnBack{
+        background: #333;
+        margin-left: 0px;
+        margin-top: 100px;
+        border: none;
+        box-shadow: none;
+        padding: 10px 25px;
+        color:#56d22b;
+        font-size: 16px;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #56d22b;
+    }
+
+    .btnBack:hover{
+        background: red;
+        color: #111;
+        border-color: red; 
+    }
+</style>
+
+<div class="container">
+    <h2>Criar uma nova nota</h2>
+    <form action="/add" method="POST">
+        <div class="input-field">
+            <input type="text" name="titulo" required="">
+            <label class="label1">Insira um titulo</label>
+            <span class="span1"></span>
+            <input type="text" name="conteudo" required=""class="input2"></input>
+            <label class="label2">Conteúdo</label>
+            <span class="span2"></span>
+            <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+  
+        </div>
+        <input type="submit" value="Cadastrar" name="" class="btn">
+        <a href="/"><input type="button" value="  Voltar  " name="" class="btnBack"></a>
+    </form>
+</div>

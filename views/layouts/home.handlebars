@@ -1,0 +1,371 @@
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+
+.body{
+    margin-left: 0px;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    background: #111;
+    
+    justify-content: center;
+    align-items: center;
+    font-family: consolas;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+h3{
+    margin-top: -20px;
+}
+
+p{
+    margin-top: 20px;
+    word-break: break-word; 
+
+}
+
+span{
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    display: block;
+    background: #56d22b;
+    width: 100%;
+    height: 2px;
+}
+.container{
+    margin-top: 30px;
+    margin-bottom: -100px;
+    margin-left: 525px; 
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container .card{
+    position: relative;
+}
+
+.container .card .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    transform: translateY(0);
+    background: #56d22b;
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    max-width: 100px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color:#fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+
+.container .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+.btn{
+    margin-left: 605px;
+    margin-top: 25px;
+    border: none;
+    box-shadow: none;
+    padding: 10px 25px;
+    background: #56d22b;
+    color:#333;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 2.5px black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+
+}
+
+.btn:hover{
+    color: black;
+}
+
+.btnDel{
+    margin-left: 95%;
+    
+    margin-top: -50px;
+    border: none;
+    box-shadow: none;
+    padding: 3px 9px;
+    background: #333;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.btnDel:hover{
+    background: red;
+}
+
+.node{
+    color: #56d22b;
+    margin-top: 0px;
+}
+
+.shadow{
+    margin-top: -25px;
+    box-shadow: 10px 5px 10px 10px black;
+}
+
+.header{
+    width: 100%;
+    height: 10px;
+    background-color: #56d22b;
+    top: -15px;
+}
+
+{{!-- rodapé --}}
+html{
+    height: 100%;
+}
+
+.footer{
+    background-color: #0077b5;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    z-index: 999;
+    
+}
+
+ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 320px;
+    height: 60px;
+}
+
+ul:before{
+    content: 'Compartilhe \f1e0';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #56d22b;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 60px;
+    color: #333;
+    font-size: 30px;
+    margin: 0 2px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+ul:hover:before{
+    width: 60px;
+    content: '\f1e0'
+}
+
+ul li{
+    position: absolute;
+    list-style: none;
+    transition: 1s;
+}
+
+ul li a{
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #262626;
+    color: #fff;
+    margin: 0 2px;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 1s;
+}
+
+ul li:nth-child(1) a{
+    background: #3b5999;
+
+}
+ul li:nth-child(2) a{
+    background: #55acee;
+    
+}
+ul li:nth-child(3) a{
+    background: #dd4b39;
+    
+}
+ul li:nth-child(4) a{
+    background: #0077b5;
+    
+}
+ul li:nth-child(5) a{
+    background: #e4405f;   
+}
+
+ul:hover li:nth-child(1) a{
+    transform: translateX(64px) rotate(360deg);
+    transition-delay: 0.8s;
+}
+
+ul:hover li:nth-child(2) a{
+    transform: translateX(128px) rotate(360deg);
+    transition-delay: 0.6s;
+}
+ul:hover li:nth-child(3) a{
+    transform: translateX(192px) rotate(360deg);
+    transition-delay: 0.4s;
+}
+ul:hover li:nth-child(4) a{
+    transform: translateX(256px) rotate(360deg);
+    transition-delay: 0.2s;
+}
+ul:hover li:nth-child(5) a{
+    transform: translateX(320px) rotate(360deg);
+    transition-delay: 0s;
+}
+
+</style>
+<script type="text/javascript">
+    function alerta(mensagem){
+      alert(mensagem);
+    }
+</script>
+
+{{!-- Header --}}
+<span class="header"></span>
+<div class="shadow">
+    <h1>Bloco de Notas com <h1 id="teste" onclick="console.log('teste')"class="node">Node.js</h1></h1>
+</div>
+    <a href="/cad/"><input type="submit" value="+ Nova nota" class="btn"></a>
+
+{{!-- Posts --}}
+    <div class="body">
+    {{#each posts}}
+        <div class="container">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        {{!-- <img src="../images/stark.jpeg"> --}}
+                        <h3>{{titulo}}</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <img src="">
+                        <p>{{conteudo}}</p>
+                        <a href="#">Adotar</a>
+                        <a href="/deletar/{{id}}" onclick="alerta('Nota deletada com sucesso!')" >Deletar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {{!-- <a href="/deletar/{{id}}"><button onclick="alerta('Nota deletada com sucesso!')" class="btnDel">x</button></a> --}}
+            {{!-- <h3>{{titulo}}</h3>
+            <span></span>
+            <p>{{conteudo}}</p> --}}
+        {{!-- </div> --}}
+    {{/each}}
+    
+    </div>
+
+{{!-- footer --}}
+<footer class="footer">
+    <ul>
+        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>
+        <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+    </ul>
+</footer>
