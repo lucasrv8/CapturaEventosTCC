@@ -1,0 +1,28 @@
+Estrutura de gravação de eventos:
+
+Vetor de eventos []
+
+Objeto evento {}
+
+Estrutura do objeto evento: 
+
+evento{
+    tipo;
+    tipoInput;
+    target;
+    dado;
+    dadoContido;
+    objeto;
+}
+
+Obs: Dependo do tipo do eventos alguns campos podem ter o valor nulo.
+
+Exemplo: [{Evento}, {Evento}, {Evento}, ...]
+
+
+
+Para vizualizar os efeitos da gravação é necessário abrir o console do navegador (F12)
+
+Atalhos para melhorar a vizualização da captura de eventos:
+    - Shift direito imprime no console o vetor com os eventos gravados
+    - Alt direito limpa o localStorage com os eventos gravados (Finalizar também)
